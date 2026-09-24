@@ -17,7 +17,7 @@ const SystemConfig = () => {
   const fetchConfig = async () => {
     setIsRefreshing(true);
     try {
-      const response = await API.get('/config');
+      const response = await API.get('/config/public');
       const cfg = response.data.data;
       if (cfg) {
         setRegistrationFee(cfg.registrationFee || 500);

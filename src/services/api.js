@@ -27,7 +27,7 @@ API.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem("admin_token");
+      // localStorage.removeItem("admin_token");
       window.location.href = "/login";
     }
 
@@ -101,5 +101,8 @@ export const updateSystemConfig = async (config) => {
   const response = await API.put("/admin/config", config);
   return response.data;
 };
+
+
+
 
 export default API;
